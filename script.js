@@ -1,4 +1,8 @@
 let player1 = document.getElementById("player1");
+let playerSelection = document.getElementById("player1");
+//needed to make playerSelection into player1 to run it through the btn click function
+//now hopefully playerSelection = the result of btn.onclick function
+
 let btn = document.getElementById("playbtn");
 
 
@@ -13,12 +17,9 @@ let choices = ["Rock","Paper","Scissors"];
 
 //math.floor + math.random chooses from an array. make sure to multiply by the variable.length so that it can see the number of things items in the array and choose one
 
-btn.onclick = function() {
-    return(player1.value); 
-}
+//just need it so that my function reads what's in input at the time of button press
 
-//needed to make playerSelection into player1 to run it through the btn click function
-//now hopefully playerSelection = the result of btn.onclick function
+
 
 
 

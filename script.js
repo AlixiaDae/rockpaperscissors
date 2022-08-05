@@ -14,7 +14,7 @@ let choices = ["Rock","Paper","Scissors"];
 //math.floor + math.random chooses from an array. make sure to multiply by the variable.length so that it can see the number of things items in the array and choose one
 
 btn.onclick = function() {
-    console.log(player1.value) 
+    return(player1.value); 
 }
 
 //needed to make playerSelection into player1 to run it through the btn click function

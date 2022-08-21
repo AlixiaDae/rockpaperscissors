@@ -21,7 +21,14 @@ buttons.forEach((button) => {
     let computerSelection = getComputerChoice();
 
     
-     if(playerSelection == computerSelection) {
+      if(playerScore == 5) {
+      
+      console.log('ah');
+    } else if(computerScore == 5) {
+      
+      console.log('aaaaah');
+    
+    } else if(playerSelection == computerSelection) {
       result.innerHTML = 'It\'s a draw!';
     } 
     
@@ -30,24 +37,30 @@ buttons.forEach((button) => {
       playerScore++;
     } else if((playerSelection == 'Rock') && (computerSelection == 'Scissors')) {
       result.innerHTML = "Computer wins!";
+      
       computerScore++;
     } 
     
       else if((playerSelection == 'Paper') && (computerSelection == 'Rock')) {
       result.innerHTML = "Player wins!";
+      
       playerScore++;
     } else if((playerSelection == 'Paper') && (computerSelection == 'Scissors')) {
       result.innerHTML = "Computer wins!";
+      
       computerScore++;
     } 
 
     else if((playerSelection == 'Scissors') && (computerSelection == 'Paper')) {
       result.innerHTML = "Player wins!";
+      
       playerScore++;
     } else if((playerSelection == 'Scissors') && (computerSelection == 'Rock')) {
       result.innerHTML = "Computer wins!";
+      
       computerScore++;
     } 
+    
     
   })
 

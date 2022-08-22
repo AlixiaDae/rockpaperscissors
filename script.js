@@ -2,12 +2,17 @@
 function getComputerChoice() {
     let choices = ["Rock","Paper","Scissors"];
     let result = choices[Math.floor(Math.random()*choices.length)]
+    let image = document.getElementById('compimage');
+
     if(result === "Scissors") { 
-      document.getElementById('compscissors').style.display = "block";
+      image.src = './images/Scissors.png';
+      document.getElementById('compimage').style.display = "block";
     } else if(result === "Rock") { 
-      document.getElementById('comprock').style.display = "block";
+      image.src = './images/Rock.png';
+      document.getElementById('compimage').style.display = "block";
     } else if(result === "Paper") {
-      document.getElementById('comppaper').style.display = "block";
+      image.src = './images/Paper.png';
+      document.getElementById('compimage').style.display = "block";
     }
       return result;
 }
@@ -73,6 +78,25 @@ buttons.forEach((button) => {
   })
 
 })
+
+
+buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+    let image = document.getElementById('playerimage');
+    
+    if (button.innerHTML == 'Paper') {
+      image.src = './images/Paper.png';
+      document.getElementById('playerimage').style.display = 'block';
+    } else if (button.innerHTML == 'Scissors') {
+      image.src = './images/Scissors.png';
+      document.getElementById('playerimage').style.direction = 'block';
+    } else if (button.innerHTML == 'Rock') {
+      image.src = './images/Rock.png';
+      document.getElementById('playerimage').style.display = 'block';
+    }
+  })
+})
+
 
 
 //show image of computer's corresponding choice

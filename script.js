@@ -1,7 +1,15 @@
 
 function getComputerChoice() {
     let choices = ["Rock","Paper","Scissors"];
-    return choices[Math.floor(Math.random()*choices.length)];
+    let result = choices[Math.floor(Math.random()*choices.length)]
+    if(result === "Scissors") { 
+      document.getElementById('compscissors').style.display = "block";
+    } else if(result === "Rock") { 
+      document.getElementById('comprock').style.display = "block";
+    } else if(result === "Paper") {
+      document.getElementById('comppaper').style.display = "block";
+    }
+      return result;
 }
 
 const result = document.querySelector('.result');
@@ -20,7 +28,7 @@ buttons.forEach((button) => {
   button.addEventListener('click', () => {
     let playerSelection = button.innerHTML;
     let computerSelection = getComputerChoice();
-   
+    
       if(playerScore == 5) {
       score.innerHTML = 'Victory!';
       
@@ -32,28 +40,31 @@ buttons.forEach((button) => {
     } 
     
       else if((playerSelection == 'Rock') && (computerSelection == 'Paper')) {
+      console.log('Paper');
       result.innerHTML = "Player wins!";
-      
       playerScore++;
     } else if((playerSelection == 'Rock') && (computerSelection == 'Scissors')) {
+      console.log('Scissors');
       result.innerHTML = "Computer wins!";
       computerScore++;
     } 
     
       else if((playerSelection == 'Paper') && (computerSelection == 'Rock')) {
+      console.log('Rock');
       result.innerHTML = "Player wins!";
-      
       playerScore++;
     } else if((playerSelection == 'Paper') && (computerSelection == 'Scissors')) {
+      console.log('Scissors');
       result.innerHTML = "Computer wins!";
       computerScore++;
     } 
 
     else if((playerSelection == 'Scissors') && (computerSelection == 'Paper')) {
+      console.log('Paper');
       result.innerHTML = "Player wins!";
-      
       playerScore++;
     } else if((playerSelection == 'Scissors') && (computerSelection == 'Rock')) {
+      console.log('Rock');
       result.innerHTML = "Computer wins!";
       computerScore++;
     } 
@@ -64,3 +75,5 @@ buttons.forEach((button) => {
 })
 
 
+//show image of computer's corresponding choice
+//when another button is clicked, replace the image to reflect computer's new choice

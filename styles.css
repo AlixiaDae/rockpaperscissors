@@ -1,7 +1,27 @@
-div {
+.container {
     display: flex;
     justify-content: center;
-    margin-top: 500px;
+    gap: 200px;
+}
+
+.subcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 380px;
+}
+
+#result {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
     gap: 10px;
 }
 
@@ -13,7 +33,19 @@ button {
 }
 
 button:hover {
-    border: 3px solid rgb(59, 185, 59);
+    /*border: 3px solid rgb(59, 185, 59);*/
     font-size: 40px;
     font-weight: bold;
+    box-shadow: 0 0 0 3px rgb(59, 185, 59);;
+}
+
+
+h1 {
+    font-size: 100px;
+    text-align: center;
+    height: 100px;
+}
+
+.playerscorecard, .computerscorecard {
+    margin-top: 200px;
 }

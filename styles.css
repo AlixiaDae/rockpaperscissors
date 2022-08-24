@@ -1,7 +1,6 @@
 .container {
     display: flex;
-    justify-content: center;
-    gap: 200px;
+    justify-content: space-around;
 }
 
 .subcontainer {
@@ -9,6 +8,10 @@
     flex-direction: column;
     justify-content: center;
     margin-top: 380px;
+}
+
+h1 {
+    text-align: center;
 }
 
 #result {
@@ -26,10 +29,11 @@
 }
 
 button {
+    margin-bottom: 20px;
     border-radius: 9%;
     height: 60px;
     width: 200px;
-    font-size: 36px;
+    font-size: 30px;
 }
 
 button:hover {
@@ -39,13 +43,19 @@ button:hover {
     box-shadow: 0 0 0 3px rgb(59, 185, 59);;
 }
 
-
-h1 {
-    font-size: 100px;
-    text-align: center;
-    height: 100px;
+#newgame {
+    opacity: 0;
 }
 
-.playerscorecard, .computerscorecard {
+.newgamecontainer {
+    display: flex;
+    justify-content: center;
+}
+
+.playerscorecard,
+.computerscorecard {
     margin-top: 200px;
+    font-size: 36px;
 }
+
+

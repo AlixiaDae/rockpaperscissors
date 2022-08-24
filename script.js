@@ -2,102 +2,83 @@
 function getComputerChoice() {
     let choices = ["Rock","Paper","Scissors"];
     let result = choices[Math.floor(Math.random()*choices.length)]
-    let image = document.getElementById('compimage');
-
-    if(result === "Scissors") { 
-      image.src = './images/Scissors.png';
-      document.getElementById('compimage').style.display = "block";
-    } else if(result === "Rock") { 
-      image.src = './images/Rock.png';
-      document.getElementById('compimage').style.display = "block";
-    } else if(result === "Paper") {
-      image.src = './images/Paper.png';
-      document.getElementById('compimage').style.display = "block";
-    }
-      return result;
+    return result;
 }
 
-const result = document.querySelector('.result');
-const rock = document.querySelector('.rock');
-const paper = document.querySelector('.paper');
-const scissors = document.querySelector('.scissors');
-const score = document.querySelector('.score');
 
-const buttons = document.querySelectorAll('button');
-
-let playerScore = 0;
-let computerScore = 0;
-
+let buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
-    let playerSelection = button.innerHTML;
+    let rock = document.getElementById('rock');
+    let paper = document.getElementById('paper');
+    let scissors = document.getElementById('scissors');
+    let choices = [rock,paper,scissors];
     let computerSelection = getComputerChoice();
-    
-      if(playerScore == 5) {
-      score.innerHTML = 'Victory!';
+
+ 
+
+      if(button == rock && computerSelection == "Rock") {
+      let result = "Draw";
+      console.log(result);
       
-    } else if(computerScore == 5) {
-      score.innerHTML = 'Defeat!'
+    } else if(button == rock && computerSelection == "Paper") {
+      let result = "Lose";
+      console.log(result);
+     
       
-    } else if(playerSelection == computerSelection) {
-      result.innerHTML = 'It\'s a draw!';
+      
+    } else if(button == rock && computerSelection == "Scissors") {
+      let result = "Win";
+      console.log(result);
+      
+     
+      
+     
     } 
-    
-      else if((playerSelection == 'Rock') && (computerSelection == 'Paper')) {
-      console.log('Paper');
-      result.innerHTML = "Player wins!";
-      playerScore++;
-    } else if((playerSelection == 'Rock') && (computerSelection == 'Scissors')) {
-      console.log('Scissors');
-      result.innerHTML = "Computer wins!";
-      computerScore++;
-    } 
-    
-      else if((playerSelection == 'Paper') && (computerSelection == 'Rock')) {
-      console.log('Rock');
-      result.innerHTML = "Player wins!";
-      playerScore++;
-    } else if((playerSelection == 'Paper') && (computerSelection == 'Scissors')) {
-      console.log('Scissors');
-      result.innerHTML = "Computer wins!";
-      computerScore++;
+        
+      else if(button == paper && computerSelection == "Paper") {
+      let result = "Draw";
+      console.log(result);
+      
+        
+    } else if(button == paper && computerSelection == "Scissors") {
+      let result = "Lose";
+      console.log(result);
+     
+     
+      
+    } else if(button == paper && computerSelection == "Rock") {
+      let result = "Win";
+      console.log(result);
+     
+      
+     
+        
     } 
 
-    else if((playerSelection == 'Scissors') && (computerSelection == 'Paper')) {
-      console.log('Paper');
-      result.innerHTML = "Player wins!";
-      playerScore++;
-    } else if((playerSelection == 'Scissors') && (computerSelection == 'Rock')) {
-      console.log('Rock');
-      result.innerHTML = "Computer wins!";
-      computerScore++;
-    } 
+      else if(button == scissors && computerSelection == "Scissors") {
+      let result = "Draw";
+      console.log(result);
     
-    
-  })
-
-})
-
-
-buttons.forEach((button) => {
-  button.addEventListener('click', () => {
-    let image = document.getElementById('playerimage');
-    
-    if (button.innerHTML == 'Paper') {
-      image.src = './images/Paper.png';
-      document.getElementById('playerimage').style.display = 'block';
-    } else if (button.innerHTML == 'Scissors') {
-      image.src = './images/Scissors.png';
-      document.getElementById('playerimage').style.direction = 'block';
-    } else if (button.innerHTML == 'Rock') {
-      image.src = './images/Rock.png';
-      document.getElementById('playerimage').style.display = 'block';
+       
+    } else if(button == scissors && computerSelection == "Rock") {
+      let result = "Lose";
+      console.log(result);
+      
+      
+      
+     
+    } else if(button == scissors && computerSelection == "Paper") {
+      let result = "Win";
+      console.log(result);
+      
+      
+      
+      
     }
-  })
+  }
+    
+
+  )
 })
-
-
-
-//show image of computer's corresponding choice
-//when another button is clicked, replace the image to reflect computer's new choice

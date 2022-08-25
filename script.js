@@ -6,8 +6,19 @@
 } */
 
 let result = document.getElementById('result');
-let buttons = document.querySelectorAll('button');
+let buttons = document.querySelectorAll('#buttons button');
 
+
+let newgame = document.querySelector('#newgame');
+
+newgame.addEventListener('click', () => {
+  playerScore = 0;
+  computerScore = 0;
+  document.getElementById('playerscore').textContent = '';
+  document.getElementById('computerscore').textContent = '';
+  result.textContent = '';
+  }
+)
 
 buttons.forEach((playerSelection) => {
   playerSelection.addEventListener('click', () => {
@@ -42,33 +53,35 @@ buttons.forEach((playerSelection) => {
       result.textContent = "Lose";
     }  else if (playerChoice == "Scissors" && computerChoice == "Paper") {
       result.textContent = "Win";
-    }
-
-    trackScore();
+    } 
     gameWinner();
-    
+    trackScore();
   })
 })
 
 let playerScore = 0;
 let computerScore = 0;
-let scores = ["Player","Computer"];
 
 function trackScore() {
   if (result.innerHTML == "Win") {
     playerScore++;
-    document.getElementById('playerScore').innerHTML = `${playerScore}`;
+    document.getElementById('playerscore').innerHTML = `${playerScore}`;
+    return playerScore;
   } else if (result.innerHTML == "Lose") {
     computerScore++;
-    document.getElementById('computerScore').innerHTML = `${computerScore}`;
+    document.getElementById('computerscore').innerHTML = `${computerScore}`;
+    return computerScore;
   }
 }
 
 function gameWinner() {
   if(playerScore == 5){
-    result.innerHTML = "Victory!";
+    result.textContent = "Victory! Begin new game!";
   } else if(computerScore == 5) {
-    result.innerHTML = "Defeat!";
-  }
+
+    result.textContent = "Defeat! Begin new game!";
+  
+  } 
 }
+
 

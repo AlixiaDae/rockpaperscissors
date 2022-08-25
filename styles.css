@@ -38,13 +38,13 @@ button {
 
 button:hover {
     /*border: 3px solid rgb(59, 185, 59);*/
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
     box-shadow: 0 0 0 3px rgb(59, 185, 59);;
 }
 
 #newgame {
-    opacity: 0;
+    
 }
 
 .newgamecontainer {

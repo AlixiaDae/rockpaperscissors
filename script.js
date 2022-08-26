@@ -1,17 +1,8 @@
-
-/*function getComputerChoice() {
-    let choices = ["Rock","Paper","Scissors"];
-    let result = choices[Math.floor(Math.random()*choices.length)]
-    return result;
-} */
-
 let result = document.getElementById('result');
 let buttons = document.querySelectorAll('#buttons button');
 let point;
-let img = document.getElementById('image1');
-
-let btnImg = document
-
+let playerImg = document.getElementById('image1');
+let compImg = document.getElementById('image2');
 let newgame = document.querySelector('#newgame');
 
 newgame.addEventListener('click', () => {
@@ -20,17 +11,15 @@ newgame.addEventListener('click', () => {
   document.getElementById('playerscore').textContent = '';
   document.getElementById('computerscore').textContent = '';
   result.textContent = '';
-  img.style.display = "none";
+  playerImg.style.display = "none";
+  compImg.style.display = "none";
   }
 )
 
 buttons.forEach((playerSelection) => {
   playerSelection.addEventListener('click', () => {
     
-
     let playerChoice = playerSelection.textContent;
-
-    console.log(playerChoice)
 
     let rock = document.getElementById('rock');
     let paper = document.getElementById('paper');
@@ -39,39 +28,44 @@ buttons.forEach((playerSelection) => {
     let computerSelection = [rock, paper, scissors];
     let computerChoice = computerSelection[Math.floor(Math.random()*computerSelection.length)].textContent
     
-    console.log(computerChoice);
-    
       if (playerChoice === computerChoice) {
       point = 0;
       result.textContent = "Draw";
-      console.log(point);
+      compImg.src = playerImg.src;
+      compImg.style.display = "block";
     }
       else if (playerChoice == "Rock" && computerChoice == "Paper") {
       point = "CP";
       result.textContent = "Lose";
-      console.log(point);
+      compImg.src = "./images/Paper.png";
+      compImg.style.display = "block";
     } else if (playerChoice == "Rock" && computerChoice == "Scissors") {
       point = "P"
       result.textContent = "Win";
-      console.log(point);
+      compImg.src = "./images/Scissors.png";
+      compImg.style.display = "block";
 
     } else if (playerChoice == "Paper" && computerChoice == "Scissors") {
       point = "CP";
       result.textContent = "Lose";
-      console.log(point);
+      compImg.src = "./images/Scissors.png";
+      compImg.style.display = "block";
     } else if (playerChoice == "Paper" && computerChoice == "Rock") {
       point = "P";
       result.textContent = "Win";
-      console.log(point);
+      compImg.src = "./images/Rock.png";
+      compImg.style.display = "block";
 
     }  else if (playerChoice == "Scissors" && computerChoice == "Rock") {
       point = "CP";
       result.textContent = "Lose";
-      console.log(point);
+      compImg.src = "./images/Rock.png";
+      compImg.style.display = "block";
     }  else if (playerChoice == "Scissors" && computerChoice == "Paper") {
       point = "CP";
       result.textContent = "Win";
-      console.log(point);
+      compImg.src = "./images/Paper.png";
+      compImg.style.display = "block";
     } 
     
     trackScore();
@@ -107,15 +101,16 @@ function gameWinner() {
 buttons.forEach((images) => {
   images.addEventListener('click', () => {
 
-      if (button.textContent == "Rock") {
-      img.src = "./images/Rock.png";
-      img.style.display = "block";
-    } else if (button.textContent == "Paper") {
-      img.src = "./images/Paper.png";
-      img.style.display = "block";
-    } else if (button.textContent == "Scissors") {
-      img.src = "./images/Scissors.png";
-      img.style.display = "block";
+      if (images.textContent == "Rock") {
+      playerImg.src = "./images/Rock.png";
+      playerImg.style.display = "block";
+    } else if (images.textContent == "Paper") {
+      playerImg.src = "./images/Paper.png";
+      playerImg.style.display = "block";
+    } else if (images.textContent == "Scissors") {
+      playerImg.src = "./images/Scissors.png";
+      playerImg.style.display = "block";
     }
   })
 })
+

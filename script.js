@@ -7,7 +7,8 @@
 
 let result = document.getElementById('result');
 let buttons = document.querySelectorAll('#buttons button');
-
+let point;
+let img = document.getElementById('image1');
 
 let newgame = document.querySelector('#newgame');
 
@@ -17,11 +18,13 @@ newgame.addEventListener('click', () => {
   document.getElementById('playerscore').textContent = '';
   document.getElementById('computerscore').textContent = '';
   result.textContent = '';
+  img.style.display = "none";
   }
 )
 
 buttons.forEach((playerSelection) => {
   playerSelection.addEventListener('click', () => {
+    
 
     let playerChoice = playerSelection.textContent;
 
@@ -37,25 +40,40 @@ buttons.forEach((playerSelection) => {
     console.log(computerChoice);
     
       if (playerChoice === computerChoice) {
+      point = 0;
       result.textContent = "Draw";
+      console.log(point);
     }
       else if (playerChoice == "Rock" && computerChoice == "Paper") {
+      point = "CP";
       result.textContent = "Lose";
+      console.log(point);
     } else if (playerChoice == "Rock" && computerChoice == "Scissors") {
+      point = "P"
       result.textContent = "Win";
+      console.log(point);
 
     } else if (playerChoice == "Paper" && computerChoice == "Scissors") {
+      point = "CP";
       result.textContent = "Lose";
+      console.log(point);
     } else if (playerChoice == "Paper" && computerChoice == "Rock") {
+      point = "P";
       result.textContent = "Win";
+      console.log(point);
 
     }  else if (playerChoice == "Scissors" && computerChoice == "Rock") {
+      point = "CP";
       result.textContent = "Lose";
+      console.log(point);
     }  else if (playerChoice == "Scissors" && computerChoice == "Paper") {
+      point = "CP";
       result.textContent = "Win";
+      console.log(point);
     } 
-    gameWinner();
+    
     trackScore();
+    gameWinner();
   })
 })
 
@@ -63,15 +81,15 @@ let playerScore = 0;
 let computerScore = 0;
 
 function trackScore() {
-  if (result.innerHTML == "Win") {
+  if (point == "P") {
     playerScore++;
     document.getElementById('playerscore').innerHTML = `${playerScore}`;
     return playerScore;
-  } else if (result.innerHTML == "Lose") {
+  } else if (point == "CP") {
     computerScore++;
     document.getElementById('computerscore').innerHTML = `${computerScore}`;
     return computerScore;
-  }
+  } 
 }
 
 function gameWinner() {
@@ -84,4 +102,9 @@ function gameWinner() {
   } 
 }
 
-
+buttons.forEach((images) => {
+  images.addEventListener('click', () => {
+    
+    img.style.display = "block";
+  })
+})

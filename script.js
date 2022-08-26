@@ -10,6 +10,8 @@ let buttons = document.querySelectorAll('#buttons button');
 let point;
 let img = document.getElementById('image1');
 
+let btnImg = document
+
 let newgame = document.querySelector('#newgame');
 
 newgame.addEventListener('click', () => {
@@ -104,7 +106,16 @@ function gameWinner() {
 
 buttons.forEach((images) => {
   images.addEventListener('click', () => {
-    
-    img.style.display = "block";
+
+      if (button.textContent == "Rock") {
+      img.src = "./images/Rock.png";
+      img.style.display = "block";
+    } else if (button.textContent == "Paper") {
+      img.src = "./images/Paper.png";
+      img.style.display = "block";
+    } else if (button.textContent == "Scissors") {
+      img.src = "./images/Scissors.png";
+      img.style.display = "block";
+    }
   })
 })
